@@ -92,6 +92,7 @@
     waybar
     wget
     wl-clipboard
+    zed-editor
     zls
     zoxide
     #...
