@@ -2,10 +2,10 @@
 
 {
   # Enable emacs service
-  services.emacs = {
-    enable = true;
-    package = pkgs.emacs-gtk;
-  };
+  # services.emacs = {
+  #   enable = true;
+  #   package = pkgs.emacs-gtk;
+  # };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -58,7 +58,7 @@
     direnv
     discord
     dunst
-    emacs-gtk
+    # emacs-gtk
     epy
     eww
     eza
