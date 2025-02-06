@@ -387,7 +387,7 @@
   };
 
   programs.wezterm = {
-    enable = true;
+    #enable = true;
     extraConfig = builtins.readFile ./dotfiles/wezterm.lua;
   };
 
