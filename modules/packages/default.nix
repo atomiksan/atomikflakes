@@ -41,13 +41,14 @@
     nerd-fonts.monaspace
     nerd-fonts.caskaydia-cove
     nerd-fonts.symbols-only
+    nerd-fonts.victor-mono
   ];
 
   # Set Neovim as CLI editor
   environment.variables.EDITOR = "nvim";
 
   # Set Emacs as Visual editor
-  environment.variables.VISUAL = "emacs";
+  environment.variables.VISUAL = "zed";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

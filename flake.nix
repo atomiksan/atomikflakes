@@ -7,6 +7,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs =
@@ -23,7 +24,7 @@
     in
     {
       nixosConfigurations = {
-        makima = lib.nixosSystem {
+        Yor = lib.nixosSystem {
           specialArgs = { inherit inputs; };
           inherit system;
           modules = [
@@ -35,11 +36,12 @@
             ./modules/packages/nix-ld.nix # Import nix-ld configurations
             ./modules/packages/nvidia.nix # Import nvidia drivers
             ./modules/packages/hyprland.nix # Import hyprland configuration
+            inputs.stylix.nixosModules.stylix
           ];
         };
       };
       homeConfigurations = {
-        atomik = home-manager.lib.homeManagerConfiguration {
+        loid = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./home.nix ];
         };

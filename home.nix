@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "atomik";
-  home.homeDirectory = "/home/atomik";
+  home.username = "loid";
+  home.homeDirectory = "/home/loid";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -133,10 +133,10 @@
     baseIndex = 1;
     shell = "/home/atomik/.nix-profile/bin/fish";
     plugins =  with pkgs; [
-      {
-        plugin = tmuxPlugins.resurrect;
-        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
-      }
+      # {
+      #   plugin = tmuxPlugins.resurrect;
+      #   extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+      # }
       {
         plugin = tmuxPlugins.continuum;
         extraConfig = ''

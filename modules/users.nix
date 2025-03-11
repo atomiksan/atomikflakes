@@ -2,9 +2,9 @@
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.atomik = {
+  users.users.loid = {
     isNormalUser = true;
-    description = "Atomik";
+    description = "Loid";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [

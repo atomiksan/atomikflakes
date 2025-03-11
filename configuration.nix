@@ -6,7 +6,7 @@
 
 {
 
-  networking.hostName = "makima"; # Define your hostname.
+  networking.hostName = "Yor"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -37,9 +37,13 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable Sddm
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
 
   # Enable the xdg portal
   xdg.portal.enable = true;
@@ -83,6 +87,11 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  
+  # Enable stylix
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+  stylix.image = ~/atomikflakes/dotfiles/rose-pine-fractal.jpg;
 
   # List services that you want to enable:
 
