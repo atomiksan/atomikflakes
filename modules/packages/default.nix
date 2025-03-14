@@ -1,11 +1,16 @@
-{ config, pkgs, inputs, ... } :
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   # Enable emacs service
-  # services.emacs = {
-  #   enable = true;
-  #   package = pkgs.emacs-gtk;
-  # };
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -48,58 +53,62 @@
   environment.variables.EDITOR = "nvim";
 
   # Set Emacs as Visual editor
-  environment.variables.VISUAL = "zed";
+  environment.variables.VISUAL = "emacs";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    bat
-    brightnessctl
-    direnv
-    discord
-    dunst
-    # emacs-gtk
-    epy
-    eww
-    eza
-    fd
-    fzf
-    fastfetch
-    gcc_multi
-    ghostty
-    gnome-tweaks
-    gnumake
-    go
-    grim
-    hyprpaper
-    hyprcursor
-    kitty
-    libgcc
-    libnotify
-    mpv
-    networkmanagerapplet
-    nwg-look
-    pavucontrol
-    rofi-wayland
-    ripgrep
-    rustup
-    shfmt
-    shellcheck
-    slurp
-    swww
-    tmux
-    unzip
-    waybar
-    wget
-    wl-clipboard
-    zed-editor
-    zls
-    zoxide
-    #...
-  ] ++ [
-    # Required for hyprland cursor
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-    inputs.zen-browser.packages."${system}".default
+  environment.systemPackages =
+    with pkgs;
+    [
+      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      bat
+      brightnessctl
+      direnv
+      discord
+      dunst
+      emacs
+      epy
+      eww
+      eza
+      fd
+      fzf
+      fastfetch
+      gcc_multi
+      ghostty
+      gnome-tweaks
+      gnumake
+      go
+      grim
+      hyprpaper
+      hyprcursor
+      kitty
+      libgcc
+      libnotify
+      mpv
+      networkmanagerapplet
+      nixfmt-rfc-style
+      nwg-look
+      pavucontrol
+      rofi-wayland
+      ripgrep
+      rustup
+      shfmt
+      shellcheck
+      slurp
+      swww
+      tmux
+      unzip
+      waybar
+      wget
+      wl-clipboard
+      yazi
+      zls
+      zoxide
+      #...
+    ]
+    ++ [
+      # Required for hyprland cursor
+      inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+      inputs.zen-browser.packages."${system}".default
     ];
 }

@@ -11,12 +11,14 @@
       useOSProber = true;
       efiSupport = true;
       device = "nodev";
-      theme = pkgs.fetchFromGitHub{
-        owner = "semimqmo";
-        repo = "sekiro_grub_theme";
-        rev = "1affe05f7257b72b69404cfc0a60e88aa19f54a6";
-        sha256 = "02gdihkd2w33qy86vs8g0pfljp919ah9c13cj4bh9fvvzm5zjfn1";
-        } + "/Sekiro";
+      theme =
+        pkgs.fetchFromGitHub {
+          owner = "semimqmo";
+          repo = "sekiro_grub_theme";
+          rev = "1affe05f7257b72b69404cfc0a60e88aa19f54a6";
+          sha256 = "02gdihkd2w33qy86vs8g0pfljp919ah9c13cj4bh9fvvzm5zjfn1";
+        }
+        + "/Sekiro";
     };
     # systemd-boot = {
     #   enable = true;
@@ -42,12 +44,12 @@
     #      halt
     #     }
     #   '';
-      # theme = pkgs.fetchzip {
-      # https://github.com/AdisonCavani/distro-grub-themes
-      #   url = "https://raw.githubusercontent.com/AdisonCavani/distro-grub-themes/master/themes/freeBSD.tar";
-      #   hash = "sha256-oTrh+5g73y/AXSR+MPz6a25KyCKCPLL8mZCDup/ENZc=";
-      #   stripRoot=false;
-      # };
-  #   };
+    # theme = pkgs.fetchzip {
+    # https://github.com/AdisonCavani/distro-grub-themes
+    #   url = "https://raw.githubusercontent.com/AdisonCavani/distro-grub-themes/master/themes/freeBSD.tar";
+    #   hash = "sha256-oTrh+5g73y/AXSR+MPz6a25KyCKCPLL8mZCDup/ENZc=";
+    #   stripRoot=false;
+    # };
+    #   };
   };
 }

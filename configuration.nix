@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
 
@@ -87,11 +92,12 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  
+
   # Enable stylix
   stylix.enable = true;
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-  stylix.image = ~/atomikflakes/dotfiles/rose-pine-fractal.jpg;
+  #stylix.image = ~/atomikflakes/dotfiles/rose-pine-fractal.jpg;
+  stylix.targets.grub.enable = false;
 
   # List services that you want to enable:
 

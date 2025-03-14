@@ -86,7 +86,7 @@
     enableFishIntegration = true;
     enableTransience = true;
   };
-  
+
   programs.tmux = {
     enable = true;
     terminal = "tmux-256color";
@@ -96,43 +96,43 @@
     sensibleOnTop = true;
     #customPaneNavigationAndResize = false;
     extraConfig = ''
-    set-option -sa terminal-overrides ",xterm*:Tc"
-    set-option -g focus-events on
+      set-option -sa terminal-overrides ",xterm*:Tc"
+      set-option -g focus-events on
 
-    # Vim style key binds for panes
-    bind h select-pane -L
-    bind j select-pane -D
-    bind k select-pane -U
-    bind l select-pane -R
-    
-    # Resize panes using Alt + arrow keys
-    bind -n M-Left resize-pane -L 5    # Shrink pane by 5 cells to the left
-    bind -n M-Right resize-pane -R 5   # Expand pane by 5 cells to the right
-    bind -n M-Up resize-pane -U 5      # Shrink pane by 5 cells upwards
-    bind -n M-Down resize-pane -D 5    # Expand pane by 5 cells downwards
+      # Vim style key binds for panes
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
 
-    # Shift arrow to switch windows
-    bind -n S-Left  previous-window
-    bind -n S-Right next-window
+      # Resize panes using Alt + arrow keys
+      bind -n M-Left resize-pane -L 5    # Shrink pane by 5 cells to the left
+      bind -n M-Right resize-pane -R 5   # Expand pane by 5 cells to the right
+      bind -n M-Up resize-pane -U 5      # Shrink pane by 5 cells upwards
+      bind -n M-Down resize-pane -D 5    # Expand pane by 5 cells downwards
 
-    # Shift Alt vim keys to switch windows
-    bind -n M-H previous-window
-    bind -n M-L next-window
+      # Shift arrow to switch windows
+      bind -n S-Left  previous-window
+      bind -n S-Right next-window
 
-    # Set split panes to open in same directory
-    bind '"' split-window -v -c "#{pane_current_path}"
-    bind % split-window -h -c "#{pane_current_path}"
-    bind c new-window -c "#{pane_current_path}"
+      # Shift Alt vim keys to switch windows
+      bind -n M-H previous-window
+      bind -n M-L next-window
 
-    # Set split panes to follow vim-motions
-    set-window-option -g mode-keys vi 
+      # Set split panes to open in same directory
+      bind '"' split-window -v -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
+      bind c new-window -c "#{pane_current_path}"
+
+      # Set split panes to follow vim-motions
+      set-window-option -g mode-keys vi 
     '';
     disableConfirmationPrompt = true;
     mouse = true;
     newSession = true;
     baseIndex = 1;
     shell = "/home/atomik/.nix-profile/bin/fish";
-    plugins =  with pkgs; [
+    plugins = with pkgs; [
       # {
       #   plugin = tmuxPlugins.resurrect;
       #   extraConfig = "set -g @resurrect-strategy-nvim 'session'";
@@ -168,8 +168,8 @@
           set -g @vim_navigator_mapping_down "C-j"
           set -g @vim_navigator_mapping_prev ""  # removes the C-\ binding
         '';
-      }  
-      # { 
+      }
+      # {
       #   plugin = tmuxPlugins.rose-pine;
       #   extraConfig = ''
       #     set -g @rose_pine_variant 'main'
@@ -185,7 +185,7 @@
           set -g @offline_icon "nok"
         '';
       }
-    ]; 
+    ];
   };
 
   programs.fish = {
@@ -297,82 +297,82 @@
         source = "~/.config/fastfetch/images/logo.png";
         type = "kitty";
         height = 12;
-        padding =  {
+        padding = {
           top = 2;
+        };
       };
-    };
-    display = {
+      display = {
         separator = " ";
-    };
-    modules = [
+      };
+      modules = [
         "break"
         "break"
         "break"
         {
-            type = "title";
-            keyWidth = 10;
+          type = "title";
+          keyWidth = 10;
         }
         {
-            type = "os";
-            key = " ";
-            keyColor = "34";  # = color4
+          type = "os";
+          key = " ";
+          keyColor = "34"; # = color4
         }
         {
-            type = "kernel";
-            key = " ";
-            keyColor = "34";
+          type = "kernel";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "packages";
-            format = "{} (nix)";
-            key = " ";
-            keyColor = "34";
+          type = "packages";
+          format = "{} (nix)";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "shell";
-            key = " ";
-            keyColor = "34";
+          type = "shell";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "terminal";
-            key = " ";
-            keyColor = "34";
+          type = "terminal";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "wm";
-            key = " ";
-            keyColor = "34";
+          type = "wm";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "cursor";
-            key = " ";
-            keyColor = "34";
+          type = "cursor";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "terminalfont";
-            key = " ";
-            keyColor = "34";
+          type = "terminalfont";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "uptime";
-            key = " ";
-            keyColor = "34";
+          type = "uptime";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "datetime";
-            format = "{1}-{3}-{11}";
-            key = " ";
-            keyColor = "34";
+          type = "datetime";
+          format = "{1}-{3}-{11}";
+          key = " ";
+          keyColor = "34";
         }
         {
-            type = "media";
-            key = "󰝚 ";
-            keyColor = "34";
+          type = "media";
+          key = "󰝚 ";
+          keyColor = "34";
         }
         {
-            type = "player";
-            key = " ";
-            keyColor = "34";
+          type = "player";
+          key = " ";
+          keyColor = "34";
         }
         "break"
         "break"
@@ -383,7 +383,9 @@
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
-    settings = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile ./dotfiles/omp.json));
+    settings = builtins.fromJSON (
+      builtins.unsafeDiscardStringContext (builtins.readFile ./dotfiles/omp.json)
+    );
   };
 
   programs.wezterm = {
