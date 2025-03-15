@@ -102,6 +102,7 @@
       wget
       wl-clipboard
       yazi
+      zed-editor
       zls
       zoxide
       #...
