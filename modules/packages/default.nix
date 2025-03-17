@@ -75,7 +75,6 @@
       fastfetch
       gcc_multi
       ghostty
-      gnome-tweaks
       gnumake
       go
       grim
